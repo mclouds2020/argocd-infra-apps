@@ -1,6 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-resources:
-- github.com/istio/operator/deploy?ref=1.4.2
-- controlplane.yaml

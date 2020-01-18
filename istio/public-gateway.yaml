@@ -1,0 +1,30 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: public-gateway
+  namespace: istio-system
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+    hosts:
+    - "*.tomastrnka.cloud"
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      serverCertificate: "sds"
+      privateKey: "sds"
+      credentialName: "tomastrnka-cloud-tls"
+    hosts:
+    - "*.tomastrnka.cloud"
