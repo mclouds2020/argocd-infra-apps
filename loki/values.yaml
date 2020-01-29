@@ -1,0 +1,11 @@
+loki-stack:
+  promtail:
+    enabled: false
+
+  fluent-bit:
+    enabled: true
+
+  grafana:
+    enabled: true
+    service:
+      portName: http
