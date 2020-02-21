@@ -1,0 +1,27 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "hcloud-csi",
+    "namespace": "kube-system",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "hcloud-csi",
+        "namespace": "kube-system",
+        "creationTimestamp": null,
+        "annotations": {
+          "argocd.argoproj.io/hook": "PreSync"
+        }
+      }
+    },
+    "encryptedData": {
+      "token": "AgAkQ+L4YVYCRAOFC03mOKlWve977hnqRVX7v9HYFdfNmKyCghXfnYNjfr2UXgU47tby5nQFns7gSqfHaz5atNwgRacnovBlkDVp47VwDdwW7Lg6+BBHLiHOf9jplRTPmP5nSPp4HmEZBIm3XetJ1fxJET9rZ6YUxZZ2K9MNj5QquwzImbQ3OtgN6qiwv6UemnqXSfouoXpc0vAyu8P8dVhRF203ZGRE+9LourfVReQI467+Kt+QIjHcgMrEbZHLEaSqGDL2+s3nOPcu3GeTsbHsnkHDullO27hQ1mgqYVBwreZR+CQ7vEm09bV42TqiUv4EGa2EaNupzOS+N1C+sIiX55Q/Hp6YYXvDr+SRXhhaOAt7aMlr+ru1TtjoC2f0nYml153vQgTuvrZbLIT1kqi1PO0HhpjdoAU8ka5d3wqouQsa+4Z3OKWFVLVg7nmGNUUfTofQmba+AaHGmSRWbNoI6rw/qUlXFV6E7+OMhXpIMBpsvcZeuzsYRVhPfDaum76p3esVusszTN59so+wv72yAkplHAuOECyJj8hY06my5kiRrX3uR5Zg7FuYjBgU01+l7X+hk8keaLRB2QQdvRvrfJd2fUyAR+3j/GYQ61Yeip+MJyUyxejqU5afQwHTdhEZE24bmGnzhOVYJ9azp1Ya2xgz+2zJXn6vFzhobzNMoFb03txnOr8MZDjBx7x25995ZjOSp6B+C8+h2dX83BliTZnQaxzUUCfpwQrgUGXfouP/OSDCziSah481FVo/emzo0rmaQWu/DmRiZrSkAK7s"
+    }
+  },
+  "status": {
+    
+  }
+}

@@ -4,7 +4,7 @@ metadata:
   name: cert-manager-crd
   namespace: {{ .Values.metadata.namespace }}
   annotations:
-    argocd.argoproj.io/sync-wave: "-100"
+    argocd.argoproj.io/hook: PreSync
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
