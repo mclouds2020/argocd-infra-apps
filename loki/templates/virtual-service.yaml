@@ -5,7 +5,7 @@ metadata:
   namespace: logging-system
 spec:
   hosts:
-  - log.tomastrnka.cloud
+  - log.{{ .Values.project.domain }}
   gateways:
   - istio-system/public-gateway
   http:

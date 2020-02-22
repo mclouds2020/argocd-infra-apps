@@ -16,7 +16,7 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     helm:
       valueFiles:
-        - values.yaml
+        - ../apps/values.yaml
   syncPolicy:
     automated:
       prune: true
