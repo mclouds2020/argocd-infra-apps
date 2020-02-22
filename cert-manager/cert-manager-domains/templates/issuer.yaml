@@ -5,14 +5,14 @@ metadata:
   namespace: istio-system
 spec:
   acme:
-    email: admin@tomastrnka.cloud
+    email: {{ .Values.project.admin.email }}
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
     - dns01:
         cloudflare:
-          email: totr@tomastrnka.net
+          email: {{ .Values.dns.admin.email }}
           apiKeySecretRef:
             name: dns-api-key-secret
             key: api-key

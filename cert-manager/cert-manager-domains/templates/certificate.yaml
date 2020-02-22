@@ -1,11 +1,11 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: tomastrnka-cloud
+  name: {{ .Values.project.name }}
   namespace: istio-system
 spec:
-  secretName: tomastrnka-cloud-tls
+  secretName: {{ .Values.project.name }}-tls
   issuerRef:
     name: letsencrypt
   dnsNames:
-  - "*.tomastrnka.cloud"
+  - "*.{{ .Values.project.domain }}"

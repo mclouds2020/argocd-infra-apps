@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hcloud-csi
-  namespace: {{ .Values.metadata.namespace }}
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "-90"
   finalizers:
@@ -10,12 +10,12 @@ metadata:
 spec:
   destination:
     namespace: kube-system
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
   project: default
   source:
     path: hcloud-csi
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: {{ .Values.source.repoURL }}
+    targetRevision: {{ .Values.source.targetRevision }}
   syncPolicy:
     automated:
       prune: true

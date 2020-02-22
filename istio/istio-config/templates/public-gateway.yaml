@@ -3,8 +3,6 @@ kind: Gateway
 metadata:
   name: public-gateway
   namespace: istio-system
-  annotations:
-    argocd.argoproj.io/hook: PostSync
 spec:
   selector:
     istio: ingressgateway
@@ -16,7 +14,7 @@ spec:
     tls:
       httpsRedirect: true
     hosts:
-    - "*.tomastrnka.cloud"
+    - "*.{{ .Values.project.domain }}"
   - port:
       number: 443
       name: https
@@ -25,6 +23,6 @@ spec:
       mode: SIMPLE
       serverCertificate: "sds"
       privateKey: "sds"
-      credentialName: "tomastrnka-cloud-tls"
+      credentialName: "{{ .Values.project.name }}-tls"
     hosts:
-    - "*.tomastrnka.cloud"
+    - "*.{{ .Values.project.domain }}"

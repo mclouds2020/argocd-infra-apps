@@ -1,21 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager-crd
+  name: istio-config
   namespace: argocd
   annotations:
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook: PostSync
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cert-manager
+    namespace: istio-system
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deploy/manifests
-    repoURL: https://github.com/jetstack/cert-manager.git
-    targetRevision: {{ .Values.version }}
+    path: istio/istio-config
+    repoURL: {{ .Values.source.repoURL }}
+    targetRevision: {{ .Values.source.targetRevision }}
+    helm:
+      valueFiles:
+        - ../../apps/values.yaml
   syncPolicy:
     automated:
       prune: true
