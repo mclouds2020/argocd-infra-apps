@@ -2,8 +2,8 @@ source:
   repoURL: https://github.com/totr/argocd-apps
   targetRevision: HEAD
 project:
-  name: tomastrnka-cloud
-  domain: tomastrnka.cloud
+  name: hc-tomastrnka-cloud
+  domain: hc.tomastrnka.cloud
   admin:
     email: admin@tomastrnka.cloud
 dns:
