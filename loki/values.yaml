@@ -9,3 +9,7 @@ loki-stack:
     enabled: true
     service:
       portName: http
+
+  loki:
+    persistence:
+      enabled: true
